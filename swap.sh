@@ -17,7 +17,7 @@ SWAP_SIZE=$1
 
 SWAP_FILE=/var/lib/swap
 if [ ! -z "$2" ]; then
-    "SWAP_FILE"="$2"
+    SWAP_FILE="$2"
 fi
 
 
