@@ -2,7 +2,7 @@
 
 if [ ! "$#" -ge 1 ]; then
     echo "Usage: $0 {size}"
-    echo "(Default path: /swapfile)"
+    echo "(Default path: /var/lib/swap)"
     printf '%s\n' "$@"
 
 	echo "---------------------------------------"
