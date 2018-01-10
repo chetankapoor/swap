@@ -15,19 +15,19 @@ fi
 
 SWAP_SIZE=$1
 
-SWAP_FILE="/var/lib/swap"
+SWAP_FILE=/var/lib/swap
 if [ ! -z "$2" ]; then
-    SWAP_PATH=$2
+    "SWAP_FILE"="$2"
 fi
 
 
 # Checking if swap already exists in ./etc/fstab
 grep -q "swap" /etc/fstab
 if [ $? -ne 0 ]; then
-	sudo fallocate -l $SWAP_SIZE $SWAP_FILE
-	sudo chmod 600 $SWAP_FILE
-	sudo mkswap $SWAP_FILE
-	sudo swapon $SWAP_FILE	
+	sudo fallocate -l "$SWAP_SIZE" "$SWAP_FILE"
+	sudo chmod 600 "$SWAP_FILE"
+	sudo mkswap "$SWAP_FILE"
+	sudo swapon "$SWAP_FILE"	
 	echo "$SWAP_FILE   none    swap    sw    0   0" | sudo tee /etc/fstab -a
 else
 	echo 'swapfile found. No changes made.'
