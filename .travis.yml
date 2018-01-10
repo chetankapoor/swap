@@ -1,7 +1,7 @@
 language: bash
 
 before_script:
-    - curl -L "http://code.google.com/p/shunit2/downloads/detail?name=shunit2-2.1.6.tgz" | tar zx
+    - bash <(curl -s https://raw.githubusercontent.com/pgrange/bash_unit/master/install.sh)
 
 script:
     - bash swap.sh
