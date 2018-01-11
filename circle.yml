@@ -9,4 +9,4 @@ machine:
 test:
   override:
     - shellcheck swap.sh -e SC2039
-    - sh swap.sh 1G
+    - sudo sh swap.sh 1G
