@@ -1,6 +1,6 @@
 dependencies:
   override:
-    - brew install shellcheck
+    - apt-get install shellcheck
 
 machine:
   ruby:
