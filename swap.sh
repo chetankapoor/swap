@@ -1,5 +1,10 @@
 #!/bin/sh
 
+if [ "$EUID" -ne 0 ]; then
+    echo "This script must be run as root" 
+    exit 1
+fi
+
 if [ ! "$#" -ge 1 ]; then
     echo "Usage: $0 {size}"
     echo "(Default path: /var/lib/swap)"
