@@ -1,0 +1,12 @@
+dependencies:
+  override:
+    - brew install shellcheck
+
+machine:
+  ruby:
+    version: 2.4.1
+
+test:
+  override:
+    - shellcheck swap.sh -e SC2039
+    - sh swap.sh
