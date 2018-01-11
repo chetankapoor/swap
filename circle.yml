@@ -1,9 +1,8 @@
 dependencies:
   override:
-    - sudo add-apt-repository \
-           "deb http://archive.ubuntu.com/ubuntu $(lsb_release -sc) universe"
+    - sudo apt-add-repository "deb http://archive.ubuntu.com/ubuntu trusty-backports main restricted universe"
     - sudo apt-get update
-    - sudo apt-get install shellcheck -y
+    - sudo apt-get install -t trusty-backports shellcheck
 
 machine:
   ruby:
