@@ -1,6 +1,6 @@
 dependencies:
   override:
-    - apt-get install shellcheck
+    - sudo apt-get install shellcheck
 
 machine:
   ruby:
