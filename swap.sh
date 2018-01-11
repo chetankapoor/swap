@@ -41,5 +41,5 @@ fi
 echo '----------------------'
 echo 'Checking list of swap'
 echo '----------------------'
-swapon --show
+swapon -s
 
