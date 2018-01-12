@@ -16,6 +16,6 @@ sh swap.sh 2G
 ---------------------------------------
 Available options:
 
-size - Size of swap ( Example - 1G,2G or 1024M)
+size - Size of swap ( Example - 1G,2G)
 
 path - Path to create a swapfile
