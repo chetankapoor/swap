@@ -13,7 +13,8 @@ Download the script using wget:
 
 
 Then run the script with following format:
-sh swap.sh 2G 
+
+`sh swap.sh 2G`
 
 ---------------------------------------
 Available options:
