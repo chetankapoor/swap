@@ -1,10 +1,15 @@
 #!/bin/sh
 
+
+
+# Checking if user is root otherwise throw error
 if [ "$(id -u)" -ne 0 ]; then
     echo "This script must be run as root" 
     exit 1
 fi
 
+
+# Availbale Options
 if [ ! "$#" -ge 1 ]; then
     echo "Usage: $0 {size}"
     echo "(Default path: /var/lib/swap)"
@@ -20,6 +25,8 @@ fi
 
 SWAP_SIZE=$1
 
+# Default swap file
+
 SWAP_FILE=/var/lib/swap
 if [ ! -z "$2" ]; then
     SWAP_FILE="$2"
@@ -29,11 +36,11 @@ fi
 # Checking if swap already exists in ./etc/fstab
 grep -q "swap" /etc/fstab
 if ! grep -q "swap" /etc/fstab; then
-	sudo fallocate -l "$SWAP_SIZE" "$SWAP_FILE"
-	sudo chmod 600 "$SWAP_FILE"
-	sudo mkswap "$SWAP_FILE"
-	sudo swapon "$SWAP_FILE"	
-	echo "$SWAP_FILE   none    swap    sw    0   0" | sudo tee /etc/fstab -a
+	 fallocate -l "$SWAP_SIZE" "$SWAP_FILE"
+	 chmod 600 "$SWAP_FILE"
+	 mkswap "$SWAP_FILE"
+	 swapon "$SWAP_FILE"	
+	echo "$SWAP_FILE   none    swap    sw    0   0" |  tee /etc/fstab -a
 else
 	echo 'swapfile found. No changes made.'
 fi
