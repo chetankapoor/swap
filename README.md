@@ -27,5 +27,5 @@ Build the docker image first
 `docker build -t swap .`
 
 Now run the docker image
-docker run -it swap 2G
+`docker run -it swap 2G`
 
